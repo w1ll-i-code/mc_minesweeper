@@ -1,1 +1,0 @@
-execute as @p run say "Hello, World!"
