@@ -22,3 +22,14 @@ After that, place a commandblock in your world with the command `function minesw
 This function will do all the setup and create the playing field over itself,
 ready to play. To reset the gameboard, simply power the commandblock again and
 the old board will be overwriten.
+
+## How to play
+
+To uncover a field, right-click with a shovel to transform it into a path. If
+it is a bomb, you loose. Otherwise it will display the number of bombs in the
+surrounding 8 fields. If you suspect a field to be a bomb, you can flag it with
+the hoe, by transforming the dirt into farmland. To remove the flag jump on the
+farmland until it returns to dirt.
+
+You win by either uncovering all the blocks that aren't bombs, or flagging all
+the bombs correctly.
