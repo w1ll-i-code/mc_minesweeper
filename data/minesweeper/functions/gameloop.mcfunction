@@ -18,3 +18,12 @@ execute as @a[tag=lost] at @e[tag=bomb] run summon armor_stand ~ ~ ~ {Invisible:
 execute as @a[tag=lost] run kill @e[tag=field]
 execute as @a[tag=lost] run title @a title "BOOOOOM"
 tag @a remove lost
+
+# WIN CONDITION LOOP
+execute as @e[tag=field] at @s if block ~ ~1 ~ emerald_block run scoreboard players add @a fields_left 1
+execute as @p[scores={fields_left=15}] run tag @a add won
+execute as @a[tag=won] run title @p title "You won"
+execute as @a[tag=won] run playsound entity.player.levelup player @p ~ ~ ~
+execute as @a[tag=won] run kill @e[tag=field]
+scoreboard players set @a fields_left 0
+tag @e remove won
