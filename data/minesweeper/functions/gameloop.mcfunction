@@ -31,9 +31,11 @@ tag @e remove won
 
 # WIN CONDITION 2
 execute as @e[tag=bomb] at @s if block ~ ~1 ~ farmland run scoreboard players add @a fields_left 1
-execute as @p[scores={fields_left=15}] run tag @a add won
+execute as @e[tag=field] at @s if block ~ ~1 ~ farmland run scoreboard players add @a total_flags 1
+execute as @a[scores={fields_left=15,total_flags=15}] run tag @a add won
 execute as @a[tag=won] run title @p title "You won"
 execute as @a[tag=won] run playsound entity.player.levelup player @p ~ ~ ~
 execute as @a[tag=won] run kill @e[tag=field]
 scoreboard players set @a fields_left 0
+scoreboard players set @a total_flags 0
 tag @e remove won
