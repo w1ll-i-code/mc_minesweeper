@@ -10,3 +10,11 @@ execute as @e[tag=update,tag=!handled,scores={bomb_count=6}] at @s run summon ar
 execute as @e[tag=update,tag=!handled,scores={bomb_count=7}] at @s run summon armor_stand ~ ~ ~ {Invisible:1b, Invulnerable:1b, NoGravity:1b, CustomName:"7",CustomNameVisible:1b}
 execute as @e[tag=update,tag=!handled,scores={bomb_count=8}] at @s run summon armor_stand ~ ~ ~ {Invisible:1b, Invulnerable:1b, NoGravity:1b, CustomName:"8",CustomNameVisible:1b}
 execute as @e[tag=update,tag=!handled] run tag @s add handled
+
+# LOOSE CONDITION LOOP
+execute at @e[tag=bomb] if block ~ ~1 ~ air run tag @a add lost
+execute at @a[tag=lost] run playsound entity.wither.death player @a
+execute as @a[tag=lost] at @e[tag=bomb] run summon armor_stand ~ ~ ~ {Invisible:1b, Invulnerable:1b, NoGravity:1b, CustomName:'"Bomb"',CustomNameVisible:1b}
+execute as @a[tag=lost] run kill @e[tag=field]
+execute as @a[tag=lost] run title @a title "BOOOOOM"
+tag @a remove lost
