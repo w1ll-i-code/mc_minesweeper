@@ -2,7 +2,7 @@
 kill @e[type=armor_stand]
 fill ~ ~1 ~ ~9 ~1 ~9 stone_bricks
 fill ~-1 ~2 ~-1 ~10 ~2 ~10 stone_bricks
-fill ~ ~2 ~ ~9 ~2 ~9 emerald_block
+fill ~ ~2 ~ ~9 ~2 ~9 dirt
 summon armor_stand ~ ~1 ~ {Tags:[field,rowroot,columnroot], Invisible:1b, Invulnerable:1b}
 execute at @e[tag=rowroot] align y run summon armor_stand ~5 ~ ~ {Tags:[field,rowroot,columnroot], Invisible:1b, Invulnerable:1b, NoGravity:1b}
 execute at @e[tag=rowroot] align y run summon armor_stand ~1 ~ ~ {Tags:[field,columnroot], Invisible:1b, Invulnerable:1b, NoGravity:1b}
